@@ -49,3 +49,4 @@ wandb/
 *.log
 logs/
 CLAUDE.md
+.claude
