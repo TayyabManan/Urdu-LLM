@@ -1,0 +1,59 @@
+# QLoRA Training Configuration for Urdu LLM Fine-Tuning
+# Starting point — will be tuned during Week 2
+
+model:
+  base_model: "Qwen/Qwen2.5-7B-Instruct"
+  max_seq_length: 2048
+  dtype: "bfloat16"
+  load_in_4bit: true
+  quantization_type: "nf4"
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.0
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+training:
+  num_train_epochs: 2
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 8
+  learning_rate: 2.0e-4
+  lr_scheduler_type: "cosine"
+  warmup_ratio: 0.03
+  optimizer: "adamw_8bit"
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  seed: 42
+  fp16: false
+  bf16: true
+  logging_steps: 10
+  save_steps: 500
+  save_total_limit: 3
+
+data:
+  train_file: "data/processed/train.jsonl"
+  validation_split: 0.05
+  max_samples: null  # Set to integer for dry runs
+
+evaluation:
+  temperature: 0.7
+  top_p: 0.9
+  max_new_tokens: 512
+
+output:
+  output_dir: "models/checkpoints"
+  adapter_dir: "models/adapter"
+  merged_dir: "models/merged"
+  hub_model_id: null  # Set before pushing to HF
+
+wandb:
+  project: "urdu-llm-finetune"
+  run_name: null  # Auto-generated if null
