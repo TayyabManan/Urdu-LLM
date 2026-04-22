@@ -48,6 +48,5 @@ wandb/
 # Logs
 *.log
 logs/
-CLAUDE.md
-.claude
 docs
+.gitignore
