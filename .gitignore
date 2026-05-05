@@ -1,11 +1,18 @@
-# Data and models (large files)
-data/
+# Models (large files)
 models/
 *.bin
 *.safetensors
 *.gguf
 *.pt
 *.pth
+
+# Large derivable training data (regenerable from scripts/data pipeline)
+data/cleaned/
+data/combined/
+data/formatted/
+data/formatted_v2/
+# Keep: data/eval/ (eval prompts + judge verdicts, ~570 KB)
+# Keep: data/code_roman/, data/roman_urdu/, data/roman_urdu_v2/ (synthetic data, ~8 MB total)
 
 # Python
 __pycache__/
@@ -49,4 +56,3 @@ wandb/
 *.log
 logs/
 docs
-.gitignore
