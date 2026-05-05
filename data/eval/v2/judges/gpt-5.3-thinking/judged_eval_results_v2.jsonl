@@ -1,0 +1,112 @@
+{"id": 1, "category": "qa", "winner": "finetuned", "reason": "Base hallucinates a province called Asia; finetuned correctly says Punjab."}
+{"id": 2, "category": "qa", "winner": "base", "reason": "Base is closer to the actual policy of religious tolerance, while finetuned overstates Din-e-Akbar."}
+{"id": 3, "category": "qa", "winner": "finetuned", "reason": "Finetuned is clearer and more accurate about Jinnah's role in independence."}
+{"id": 4, "category": "qa", "winner": "base", "reason": "Base correctly gives four seasons; finetuned wrongly says five."}
+{"id": 5, "category": "qa", "winner": "finetuned", "reason": "Finetuned at least gets the eight-planet count, while base is completely off."}
+{"id": 6, "category": "qa", "winner": "base", "reason": "Base identifies LBW correctly; finetuned expands it incorrectly."}
+{"id": 7, "category": "qa", "winner": "finetuned", "reason": "Finetuned gives the right formula and a better explanation of why water matters."}
+{"id": 8, "category": "qa", "winner": "base", "reason": "Base is closer to Iqbal's theme; finetuned adds an odd separation angle."}
+{"id": 9, "category": "qa", "winner": "finetuned", "reason": "Finetuned explains DNS and IPs more accurately and naturally."}
+{"id": 10, "category": "qa", "winner": "finetuned", "reason": "Finetuned is still flawed, but it is closer to the five pillars than base."}
+{"id": 11, "category": "qa", "winner": "finetuned", "reason": "Finetuned is much closer to the Indus Valley civilization than the base hallucination."}
+{"id": 12, "category": "qa", "winner": "finetuned", "reason": "Finetuned gives a clear Roman Urdu explanation of diabetes and prevention."}
+{"id": 13, "category": "qa", "winner": "finetuned", "reason": "Finetuned captures the religious and political causes of Partition more cleanly."}
+{"id": 14, "category": "qa", "winner": "finetuned", "reason": "Finetuned gives the correct date and mission name."}
+{"id": 15, "category": "qa", "winner": "finetuned", "reason": "Finetuned is more readable and closer to the vitamin D explanation."}
+{"id": 16, "category": "qa", "winner": "base", "reason": "Base answers the national language and attempts the number of speakers; finetuned only answers half."}
+{"id": 17, "category": "qa", "winner": "finetuned", "reason": "Finetuned gives a more accurate scientific explanation of earthquakes."}
+{"id": 18, "category": "qa", "winner": "finetuned", "reason": "Finetuned is closer on CPEC and stays in Roman Urdu."}
+{"id": 19, "category": "qa", "winner": "finetuned", "reason": "Finetuned is concise, coherent, and on topic about space research benefits."}
+{"id": 20, "category": "qa", "winner": "tie", "reason": "Both responses name the wrong peaks, so neither is clearly better."}
+{"id": 21, "category": "summarization", "winner": "finetuned", "reason": "Finetuned summarizes the AI passage more cleanly and accurately."}
+{"id": 22, "category": "summarization", "winner": "finetuned", "reason": "Finetuned keeps the main education-system points without extra noise."}
+{"id": 23, "category": "summarization", "winner": "finetuned", "reason": "Finetuned is the clearer Roman Urdu summary."}
+{"id": 24, "category": "summarization", "winner": "finetuned", "reason": "Finetuned follows the three-sentence limit and preserves the main points."}
+{"id": 25, "category": "summarization", "winner": "finetuned", "reason": "Finetuned stays on topic and summarizes the economic pressures well."}
+{"id": 26, "category": "summarization", "winner": "base", "reason": "Base captures the transformation in daily life better than the much too sparse finetuned summary."}
+{"id": 27, "category": "summarization", "winner": "finetuned", "reason": "Finetuned is the cleaner Urdu summary of Urdu literature history."}
+{"id": 28, "category": "summarization", "winner": "finetuned", "reason": "Finetuned captures the water-crisis points more completely."}
+{"id": 29, "category": "summarization", "winner": "base", "reason": "Base is closer to the source passage and avoids finetuned's extra hallucinated detail."}
+{"id": 30, "category": "summarization", "winner": "finetuned", "reason": "Finetuned is a fuller and more fluent two-sentence summary."}
+{"id": 31, "category": "summarization", "winner": "base", "reason": "Base extracts the key negative effects more clearly."}
+{"id": 32, "category": "translation", "winner": "finetuned", "reason": "Finetuned is a more faithful Urdu translation overall."}
+{"id": 33, "category": "translation", "winner": "finetuned", "reason": "Finetuned is the correct Urdu translation of the Mandela quote."}
+{"id": 34, "category": "translation", "winner": "finetuned", "reason": "Finetuned is closer to the source, despite one mistranslated peak."}
+{"id": 35, "category": "translation", "winner": "finetuned", "reason": "Finetuned gives a smoother and more accurate English translation."}
+{"id": 36, "category": "translation", "winner": "finetuned", "reason": "Finetuned is more natural and faithful in Urdu."}
+{"id": 37, "category": "translation", "winner": "base", "reason": "Base preserves the mental-health theme better; finetuned mistranslates it as religious health."}
+{"id": 38, "category": "translation", "winner": "base", "reason": "Base provides both a translation and an explanation, while finetuned gives only a partial translation."}
+{"id": 39, "category": "translation", "winner": "finetuned", "reason": "Finetuned is the clearer and more accurate Urdu translation."}
+{"id": 40, "category": "translation", "winner": "finetuned", "reason": "Finetuned is smoother and more natural in English."}
+{"id": 41, "category": "translation", "winner": "finetuned", "reason": "Finetuned is a cleaner and more faithful translation."}
+{"id": 42, "category": "translation", "winner": "finetuned", "reason": "Finetuned is more natural English than base."}
+{"id": 43, "category": "translation", "winner": "finetuned", "reason": "Finetuned better preserves the meaning in Urdu."}
+{"id": 44, "category": "translation", "winner": "base", "reason": "Base is closer to a plain-Urdu translation of the machine-learning passage."}
+{"id": 45, "category": "translation", "winner": "finetuned", "reason": "Finetuned gives a better Urdu equivalent for the idiom, even if the literal translation is weak."}
+{"id": 46, "category": "translation", "winner": "finetuned", "reason": "Finetuned is cleaner and more faithful to the democracy passage."}
+{"id": 47, "category": "grammar", "winner": "base", "reason": "Base gets more of the corrections right overall, though both are imperfect."}
+{"id": 48, "category": "grammar", "winner": "base", "reason": "Base is at least trying to correct the sentences; finetuned drifts completely off task."}
+{"id": 49, "category": "grammar", "winner": "base", "reason": "Base at least provides tense examples, while finetuned repeats malformed lines."}
+{"id": 50, "category": "grammar", "winner": "base", "reason": "Base is closer to explaining singular and plural than finetuned's nonsense rules."}
+{"id": 51, "category": "grammar", "winner": "base", "reason": "Base is still messy, but it stays closer to the gender rule explanation than finetuned."}
+{"id": 52, "category": "grammar", "winner": "finetuned", "reason": "Finetuned gives the correct passive forms more clearly."}
+{"id": 53, "category": "grammar", "winner": "tie", "reason": "Both responses are badly fabricated, so neither is reliably better."}
+{"id": 54, "category": "grammar", "winner": "base", "reason": "Base at least explains postpositions and gives examples, while finetuned is less precise."}
+{"id": 55, "category": "grammar", "winner": "base", "reason": "Base rewrites the sentences more than finetuned does."}
+{"id": 56, "category": "grammar", "winner": "base", "reason": "Base stays closer to the topic of gendered nouns, even though it is flawed."}
+{"id": 57, "category": "reasoning", "winner": "tie", "reason": "Both responses reach the same correct total with similar reasoning."}
+{"id": 58, "category": "reasoning", "winner": "base", "reason": "Base gives the correct travel time and a fuller explanation."}
+{"id": 59, "category": "reasoning", "winner": "base", "reason": "Base is more mathematically complete, while finetuned omits the union reasoning."}
+{"id": 60, "category": "reasoning", "winner": "finetuned", "reason": "Finetuned correctly uses the 7-day cycle to get Friday."}
+{"id": 61, "category": "reasoning", "winner": "finetuned", "reason": "Finetuned correctly totals the geometric series to 62."}
+{"id": 62, "category": "reasoning", "winner": "tie", "reason": "Both responses compute the same remaining amount correctly."}
+{"id": 63, "category": "reasoning", "winner": "base", "reason": "Base matches the prompt's ages; finetuned gives Kamran the wrong age."}
+{"id": 64, "category": "reasoning", "winner": "base", "reason": "Base solves the chickens-and-goats system correctly."}
+{"id": 65, "category": "reasoning", "winner": "base", "reason": "Base follows the family-age relations correctly; finetuned does not."}
+{"id": 66, "category": "reasoning", "winner": "base", "reason": "Base is still messy, but it stays closer to the requested water-crisis policy ideas."}
+{"id": 67, "category": "reasoning", "winner": "tie", "reason": "Both responses land on the same amount and make similar simple-interest assumptions."}
+{"id": 68, "category": "reasoning", "winner": "finetuned", "reason": "Finetuned at least shows the shortfall, while base is more confused."}
+{"id": 69, "category": "reasoning", "winner": "base", "reason": "Base gives the correct 16.67-day answer with the overhead applied."}
+{"id": 70, "category": "reasoning", "winner": "finetuned", "reason": "Finetuned correctly computes the arrival time at 13:15."}
+{"id": 71, "category": "reasoning", "winner": "finetuned", "reason": "Finetuned is the clearer balanced answer on pros and cons."}
+{"id": 72, "category": "creative", "winner": "finetuned", "reason": "Finetuned is the only response that reads like a poem."}
+{"id": 73, "category": "creative", "winner": "finetuned", "reason": "Finetuned is short, but it is far more coherent than base."}
+{"id": 74, "category": "creative", "winner": "finetuned", "reason": "Finetuned is more coherent and stays in Roman Urdu."}
+{"id": 75, "category": "creative", "winner": "finetuned", "reason": "Finetuned is more fluent and actually gives four couplets."}
+{"id": 76, "category": "creative", "winner": "finetuned", "reason": "Finetuned is far more coherent than the base dialogue."}
+{"id": 77, "category": "creative", "winner": "finetuned", "reason": "Finetuned stays focused on reforms and reads like a speech."}
+{"id": 78, "category": "creative", "winner": "finetuned", "reason": "Finetuned is the more coherent story of a village boy in the city."}
+{"id": 79, "category": "creative", "winner": "finetuned", "reason": "Finetuned gives a more vivid winter-morning scene."}
+{"id": 80, "category": "creative", "winner": "base", "reason": "Base is more on-theme for a humorous article about tea and culture."}
+{"id": 81, "category": "creative", "winner": "finetuned", "reason": "Finetuned is more natural and coherent as a reunion dialogue."}
+{"id": 82, "category": "code_explanation", "winner": "finetuned", "reason": "Finetuned explains the Fibonacci code more cleanly."}
+{"id": 83, "category": "code_explanation", "winner": "finetuned", "reason": "Finetuned is clearer and closer to the sorted-list output."}
+{"id": 84, "category": "code_explanation", "winner": "finetuned", "reason": "Finetuned explains the loop difference in simpler Roman Urdu."}
+{"id": 85, "category": "code_explanation", "winner": "finetuned", "reason": "Finetuned gives a better HTML/CSS explanation and example."}
+{"id": 86, "category": "code_explanation", "winner": "base", "reason": "Base correctly spots the empty-list bug and shows the fix."}
+{"id": 87, "category": "code_explanation", "winner": "finetuned", "reason": "Finetuned explains API usage in a clearer restaurant analogy."}
+{"id": 88, "category": "code_explanation", "winner": "finetuned", "reason": "Finetuned is more fluent and useful for the data-structure comparison."}
+{"id": 89, "category": "code_explanation", "winner": "finetuned", "reason": "Finetuned explains the SQL query more clearly and accurately."}
+{"id": 90, "category": "code_explanation", "winner": "finetuned", "reason": "Finetuned is clearer and better structured for a beginner."}
+{"id": 91, "category": "code_explanation", "winner": "finetuned", "reason": "Finetuned gives a cleaner explanation of try, except, and finally."}
+{"id": 92, "category": "code_mixed", "winner": "finetuned", "reason": "Finetuned is more fluent and stays on the decorators topic."}
+{"id": 93, "category": "code_mixed", "winner": "finetuned", "reason": "Finetuned better follows the code-mixed instruction."}
+{"id": 94, "category": "code_mixed", "winner": "finetuned", "reason": "Finetuned gives a more practical step-by-step web-app guide."}
+{"id": 95, "category": "code_mixed", "winner": "finetuned", "reason": "Finetuned explains the hooks more naturally in code-mixed Urdu."}
+{"id": 96, "category": "code_mixed", "winner": "finetuned", "reason": "Finetuned is more actionable for starting freelancing."}
+{"id": 97, "category": "qa", "winner": "finetuned", "reason": "Finetuned is cleaner and more balanced on AI pros and cons."}
+{"id": 98, "category": "reasoning", "winner": "base", "reason": "Base solves the arithmetic correctly; finetuned gives the wrong total."}
+{"id": 99, "category": "creative", "winner": "finetuned", "reason": "Finetuned is shorter but still more coherent as a student speech."}
+{"id": 100, "category": "grammar", "winner": "finetuned", "reason": "Finetuned gives more usable examples and a clearer distinction."}
+Overall: 66 finetuned wins, 29 base wins, 5 ties (66/100 = 66.0%)
+Per-category breakdown: Category | Total | FT wins | Base wins | Ties | FT %
+qa | 21 | 15 | 5 | 1 | 71.4%
+summarization | 11 | 8 | 3 | 0 | 72.7%
+translation | 15 | 12 | 3 | 0 | 80.0%
+grammar | 11 | 2 | 8 | 1 | 18.2%
+reasoning | 16 | 5 | 8 | 3 | 31.2%
+creative | 11 | 10 | 1 | 0 | 90.9%
+code_explanation | 10 | 9 | 1 | 0 | 90.0%
+code_mixed | 5 | 5 | 0 | 0 | 100.0%
+Caveat: Single-judge output; borderline creative/grammar calls may differ by about ±5 points.
+Ambiguous calls were mainly in grammar and a few reasoning items where both answers were flawed or nearly equivalent.

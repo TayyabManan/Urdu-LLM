@@ -1,0 +1,100 @@
+{"id": 1, "category": "qa", "winner": "finetuned", "reason": "base hallucinated 'Asia province'; FT correct (Punjab)"}
+{"id": 2, "category": "qa", "winner": "finetuned", "reason": "FT names Din-e-Akbar; base garbled with fake terms"}
+{"id": 3, "category": "qa", "winner": "finetuned", "reason": "FT concise+accurate; base confused (says Jinnah wasn't official)"}
+{"id": 4, "category": "qa", "winner": "tie", "reason": "both wrong: base invents season names; FT says 5 seasons"}
+{"id": 5, "category": "qa", "winner": "finetuned", "reason": "base hallucinated 200B planets; FT got 8 (with repetition)"}
+{"id": 6, "category": "qa", "winner": "base", "reason": "base correct on LBW; FT calls it 'Line of Bowling' (wrong)"}
+{"id": 7, "category": "qa", "winner": "tie", "reason": "both correct H2O + functions; FT cleaner but minor errors"}
+{"id": 8, "category": "qa", "winner": "base", "reason": "base more substantive on Iqbal; FT too brief"}
+{"id": 9, "category": "qa", "winner": "finetuned", "reason": "FT mentions DNS+TCP/IP correctly; base oversimplified"}
+{"id": 10, "category": "qa", "winner": "finetuned", "reason": "FT names 3 of 5 pillars; base lists none correctly"}
+{"id": 11, "category": "qa", "winner": "finetuned", "reason": "base talks about a 1987 federation (totally wrong); FT at least about a civilization"}
+{"id": 12, "category": "qa", "winner": "finetuned", "reason": "base in Hindi script (failed Roman Urdu); FT correct"}
+{"id": 13, "category": "qa", "winner": "finetuned", "reason": "FT concise+correct; base confused/repetitive"}
+{"id": 14, "category": "qa", "winner": "finetuned", "reason": "FT correct date (Jul 20 1969); base says Sep 20"}
+{"id": 15, "category": "qa", "winner": "finetuned", "reason": "base mostly Hindi script; FT in Roman Urdu"}
+{"id": 16, "category": "qa", "winner": "finetuned", "reason": "base incorrectly hedges; FT direct correct answer"}
+{"id": 17, "category": "qa", "winner": "finetuned", "reason": "base buzzword soup; FT mentions tectonic motion"}
+{"id": 18, "category": "qa", "winner": "finetuned", "reason": "base in Hindi script; FT proper Roman Urdu with points"}
+{"id": 19, "category": "qa", "winner": "finetuned", "reason": "base infinite repetition loop; FT brief coherent"}
+{"id": 20, "category": "qa", "winner": "tie", "reason": "both wrong: base invents peak names; FT says Mt Everest (in Nepal)"}
+{"id": 21, "category": "summarization", "winner": "finetuned", "reason": "FT actually summarized; base near-copy"}
+{"id": 22, "category": "summarization", "winner": "finetuned", "reason": "FT better organized, captures more points"}
+{"id": 23, "category": "summarization", "winner": "finetuned", "reason": "base translated to English (failed format); FT stayed Roman Urdu"}
+{"id": 24, "category": "summarization", "winner": "base", "reason": "base followed 3-sentence constraint; FT gave 5"}
+{"id": 25, "category": "summarization", "winner": "finetuned", "reason": "base degenerated into Chinese; FT coherent"}
+{"id": 26, "category": "summarization", "winner": "finetuned", "reason": "base translated to English (failed Roman Urdu); FT followed format"}
+{"id": 27, "category": "summarization", "winner": "finetuned", "reason": "FT concise summary; base 6-point enumeration (not summary)"}
+{"id": 28, "category": "summarization", "winner": "base", "reason": "base 5 organized points; FT single run-on sentence"}
+{"id": 29, "category": "summarization", "winner": "tie", "reason": "both fail: base butchers Urdu; FT ignores 'Urdu mein' instruction"}
+{"id": 30, "category": "summarization", "winner": "base", "reason": "base followed 2-sentence constraint; FT gave multiple paragraphs"}
+{"id": 31, "category": "summarization", "winner": "base", "reason": "base 3 organized points (followed instruction); FT 2 sentences"}
+{"id": 32, "category": "translation", "winner": "finetuned", "reason": "FT proper Urdu; base awkward transliteration"}
+{"id": 33, "category": "translation", "winner": "finetuned", "reason": "base outputs Chinese garbage; FT clean correct"}
+{"id": 34, "category": "translation", "winner": "finetuned", "reason": "base garbled phonetic mess; FT mostly correct"}
+{"id": 35, "category": "translation", "winner": "finetuned", "reason": "FT preserves rivers; base says 'sea' twice (lost rivers)"}
+{"id": 36, "category": "translation", "winner": "finetuned", "reason": "FT decent Urdu; base awkward mistranslated"}
+{"id": 37, "category": "translation", "winner": "finetuned", "reason": "FT readable (mistakes 'mental' as 'religious'); base gibberish"}
+{"id": 38, "category": "translation", "winner": "finetuned", "reason": "FT correct direction (God asks creature); base reversed agency"}
+{"id": 39, "category": "translation", "winner": "finetuned", "reason": "base garbled mojibake; FT proper translation"}
+{"id": 40, "category": "translation", "winner": "tie", "reason": "both correct"}
+{"id": 41, "category": "translation", "winner": "finetuned", "reason": "FT decent; base awkward broken"}
+{"id": 42, "category": "translation", "winner": "tie", "reason": "both correct"}
+{"id": 43, "category": "translation", "winner": "finetuned", "reason": "FT decent; base garbled with self-correction note"}
+{"id": 44, "category": "translation", "winner": "tie", "reason": "both fail to translate ML correctly"}
+{"id": 45, "category": "translation", "winner": "finetuned", "reason": "FT offers Urdu equivalent idiom; base no proper equivalent"}
+{"id": 46, "category": "translation", "winner": "finetuned", "reason": "base garbled with Chinese mojibake; FT decent translation"}
+{"id": 47, "category": "grammar", "winner": "tie", "reason": "both attempt corrections; both have errors"}
+{"id": 48, "category": "grammar", "winner": "base", "reason": "base addresses task; FT generates unrelated sentences"}
+{"id": 49, "category": "grammar", "winner": "base", "reason": "FT repeats same sentence 5 times each tense (broken)"}
+{"id": 50, "category": "grammar", "winner": "base", "reason": "base partial explanation; FT total nonsense (talks character combination)"}
+{"id": 51, "category": "grammar", "winner": "tie", "reason": "both wrong on muzkir/muannas rules"}
+{"id": 52, "category": "grammar", "winner": "finetuned", "reason": "FT correct passive voice; base incomplete"}
+{"id": 53, "category": "grammar", "winner": "finetuned", "reason": "FT lists real idioms; base nonsense word salad"}
+{"id": 54, "category": "grammar", "winner": "base", "reason": "base more substantive on postpositions; FT incorrect examples"}
+{"id": 55, "category": "grammar", "winner": "base", "reason": "FT returns identical input (no rewrite); base provides rewrites"}
+{"id": 56, "category": "grammar", "winner": "finetuned", "reason": "base nonsense character salad; FT at least addresses task"}
+{"id": 57, "category": "reasoning", "winner": "tie", "reason": "both correct (400 rupees)"}
+{"id": 58, "category": "reasoning", "winner": "base", "reason": "base more complete (3hr 45min); FT just 3.75hr"}
+{"id": 59, "category": "reasoning", "winner": "finetuned", "reason": "FT correct + matched language; base in English"}
+{"id": 60, "category": "reasoning", "winner": "finetuned", "reason": "base refused/garbled; FT right method (wrong final day)"}
+{"id": 61, "category": "reasoning", "winner": "base", "reason": "base correct (60); FT math error (says 62)"}
+{"id": 62, "category": "reasoning", "winner": "finetuned", "reason": "FT clean Roman Urdu; base mixes English"}
+{"id": 63, "category": "reasoning", "winner": "base", "reason": "base correct (46); FT used wrong reference (got 49)"}
+{"id": 64, "category": "reasoning", "winner": "finetuned", "reason": "FT correct (12 chickens, 8 goats); base arithmetic error"}
+{"id": 65, "category": "reasoning", "winner": "finetuned", "reason": "FT correct (102); base wrong reference for son's age"}
+{"id": 66, "category": "reasoning", "winner": "finetuned", "reason": "FT 3 clear suggestions; base garbled"}
+{"id": 67, "category": "reasoning", "winner": "tie", "reason": "both correct (87,600)"}
+{"id": 68, "category": "reasoning", "winner": "finetuned", "reason": "FT clear (need extra rooms); base says 2 more (just 1 needed)"}
+{"id": 69, "category": "reasoning", "winner": "tie", "reason": "base more complete (all 3 calcs); FT matched language"}
+{"id": 70, "category": "reasoning", "winner": "finetuned", "reason": "FT correct (13:15); base wrong (gibberish)"}
+{"id": 71, "category": "reasoning", "winner": "finetuned", "reason": "FT cleaner balanced view; base truncated"}
+{"id": 72, "category": "creative", "winner": "base", "reason": "base attempts poem form (awkward); FT writes prose"}
+{"id": 73, "category": "creative", "winner": "base", "reason": "base attempts narrative; FT 3-sentence summary (not 150-200 word story)"}
+{"id": 74, "category": "creative", "winner": "finetuned", "reason": "base mixed Urdu/English (failed format); FT clean Roman Urdu"}
+{"id": 75, "category": "creative", "winner": "finetuned", "reason": "FT more readable; base awkward ghazal attempt"}
+{"id": 76, "category": "creative", "winner": "base", "reason": "base attempts dialogue; FT only 2 lines"}
+{"id": 77, "category": "creative", "winner": "finetuned", "reason": "FT cleaner speech; base garbled"}
+{"id": 78, "category": "creative", "winner": "finetuned", "reason": "base wrong cultural context (Hindu names); FT Pakistani context"}
+{"id": 79, "category": "creative", "winner": "finetuned", "reason": "base infinite repetition; FT atmospheric description"}
+{"id": 80, "category": "creative", "winner": "finetuned", "reason": "FT cleaner (no humor though); base garbled"}
+{"id": 81, "category": "creative", "winner": "finetuned", "reason": "FT coherent dialogue with shared memory; base random scrap"}
+{"id": 82, "category": "code_explanation", "winner": "finetuned", "reason": "FT correct concept; base shows wrong output list"}
+{"id": 83, "category": "code_explanation", "winner": "tie", "reason": "both correct; base more thorough but minor output error"}
+{"id": 84, "category": "code_explanation", "winner": "finetuned", "reason": "FT clean+correct examples; base garbled"}
+{"id": 85, "category": "code_explanation", "winner": "finetuned", "reason": "base mostly Urdu script (failed Roman); FT clean Roman with code"}
+{"id": 86, "category": "code_explanation", "winner": "base", "reason": "base correct fix; FT outputs '0 0 0' infinite loop"}
+{"id": 87, "category": "code_explanation", "winner": "tie", "reason": "both ok restaurant analogy"}
+{"id": 88, "category": "code_explanation", "winner": "finetuned", "reason": "FT clean code examples; base truncated"}
+{"id": 89, "category": "code_explanation", "winner": "tie", "reason": "both correct SQL explanation"}
+{"id": 90, "category": "code_explanation", "winner": "finetuned", "reason": "FT clean step-by-step; base broken numbering"}
+{"id": 91, "category": "code_explanation", "winner": "finetuned", "reason": "FT clean explanation; base garbled+truncated"}
+{"id": 92, "category": "code_mixed", "winner": "finetuned", "reason": "FT matched Roman Urdu+English format; base all English"}
+{"id": 93, "category": "code_mixed", "winner": "finetuned", "reason": "base ignored 'Urdu mein' instruction; FT matched format"}
+{"id": 94, "category": "code_mixed", "winner": "tie", "reason": "base more comprehensive (Node.js); FT matched language (Flask)"}
+{"id": 95, "category": "code_mixed", "winner": "finetuned", "reason": "FT more complete; base truncated"}
+{"id": 96, "category": "code_mixed", "winner": "finetuned", "reason": "FT better Pakistani context+Roman Urdu mix"}
+{"id": 97, "category": "qa", "winner": "finetuned", "reason": "base degenerated into repetition; FT balanced view"}
+{"id": 98, "category": "reasoning", "winner": "base", "reason": "base correct (600 kg); FT math error (says 660)"}
+{"id": 99, "category": "creative", "winner": "finetuned", "reason": "FT coherent patriotic message; base garbled"}
+{"id": 100, "category": "grammar", "winner": "finetuned", "reason": "base garbled and conflates terms (calls Istara as Ibtida); FT explains distinction with mostly-real examples"}

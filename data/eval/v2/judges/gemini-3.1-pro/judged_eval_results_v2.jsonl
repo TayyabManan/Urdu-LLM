@@ -1,0 +1,100 @@
+{"id": 1, "category": "qa", "winner": "finetuned", "reason": "Base hallucinated a fake province 'Asia', finetuned is coherent although factually incorrect about Punjab being the largest by area."}
+{"id": 2, "category": "qa", "winner": "finetuned", "reason": "Finetuned mentions his religious policy more accurately and cohesively than the base model's disjointed bullet points."}
+{"id": 3, "category": "qa", "winner": "finetuned", "reason": "Base generated incoherent formatting and gibberish, while finetuned provided a solid, accurate summary."}
+{"id": 4, "category": "qa", "winner": "finetuned", "reason": "Base model hallucinated non-existent seasons and mixed Hindi/Urdu. Finetuned is slightly off but much closer to reality."}
+{"id": 5, "category": "qa", "winner": "finetuned", "reason": "Base model had a massive hallucination (200 billion planets). Finetuned had repetition but correctly identified 8 planets."}
+{"id": 6, "category": "qa", "winner": "base", "reason": "Base model accurately explains LBW in Roman Urdu. Finetuned incorrectly defines it as 'Line of Bowling'."}
+{"id": 7, "category": "qa", "winner": "base", "reason": "Base provides a much more detailed and accurate explanation of why water is essential for life."}
+{"id": 8, "category": "qa", "winner": "base", "reason": "Base provides a comprehensive and accurate overview of Iqbal's poetry, whereas finetuned is too brief and uses an odd term."}
+{"id": 9, "category": "qa", "winner": "base", "reason": "Base followed the instruction for a simple explanation perfectly, while finetuned became too technical."}
+{"id": 10, "category": "qa", "winner": "tie", "reason": "Both models failed to accurately list the five pillars of Islam, suffering from severe hallucinations."}
+{"id": 11, "category": "qa", "winner": "tie", "reason": "Both models completely hallucinated incorrect facts about the Indus Valley Civilization."}
+{"id": 12, "category": "qa", "winner": "finetuned", "reason": "Base model switched to Devanagari script mid-response. Finetuned maintained perfect Roman Urdu."}
+{"id": 13, "category": "qa", "winner": "finetuned", "reason": "Finetuned provides a very natural, concise, and historically accurate summary compared to the base model."}
+{"id": 14, "category": "qa", "winner": "finetuned", "reason": "Finetuned correctly identified the date as July 20, 1969, whereas the base model hallucinates September 20."}
+{"id": 15, "category": "qa", "winner": "finetuned", "reason": "Base model switched scripts to Devanagari halfway through. Finetuned strictly followed Roman Urdu."}
+{"id": 16, "category": "qa", "winner": "base", "reason": "Base attempted to answer both parts of the prompt, while finetuned completely ignored the second question."}
+{"id": 17, "category": "qa", "winner": "finetuned", "reason": "Base model generated gibberish pseudo-scientific terms. Finetuned is much more coherent despite slightly odd vocabulary."}
+{"id": 18, "category": "qa", "winner": "finetuned", "reason": "Base model switched to Devanagari script. Finetuned gave a well-structured and accurate Roman Urdu response."}
+{"id": 19, "category": "qa", "winner": "finetuned", "reason": "Base model got stuck in a massive infinite repetition loop at the end. Finetuned remained coherent."}
+{"id": 20, "category": "qa", "winner": "tie", "reason": "Both models severely hallucinated the names of the mountain peaks in Pakistan's northern areas."}
+{"id": 21, "category": "summarization", "winner": "tie", "reason": "Both models provided accurate, fluent, and concise summaries of the text."}
+{"id": 22, "category": "summarization", "winner": "tie", "reason": "Both models successfully summarized the core issues of the education system in fluent Urdu."}
+{"id": 23, "category": "summarization", "winner": "finetuned", "reason": "Base model summarized the text in English. Finetuned correctly responded in Roman Urdu."}
+{"id": 24, "category": "summarization", "winner": "finetuned", "reason": "Finetuned followed the strict constraint of exactly three sentences, whereas the base model only used two."}
+{"id": 25, "category": "summarization", "winner": "finetuned", "reason": "Base model abruptly switched to Chinese mid-sentence. Finetuned provided a flawless Urdu summary."}
+{"id": 26, "category": "summarization", "winner": "finetuned", "reason": "Base model summarized the text in English. Finetuned correctly adhered to the Roman Urdu constraint."}
+{"id": 27, "category": "summarization", "winner": "tie", "reason": "Both models captured the essence of the paragraph well, though using different formatting approaches."}
+{"id": 28, "category": "summarization", "winner": "base", "reason": "Base model extracted points, whereas finetuned ignored the prompt's instruction to extract 'three main points'."}
+{"id": 29, "category": "summarization", "winner": "tie", "reason": "Base used Urdu script while Finetuned used Roman; both summaries were accurate to the source text."}
+{"id": 30, "category": "summarization", "winner": "tie", "reason": "Both models captured the summary reasonably well, though finetuned had a slight repetition glitch at the end."}
+{"id": 31, "category": "summarization", "winner": "base", "reason": "Base model correctly extracted points as requested. Finetuned output a single paragraph."}
+{"id": 32, "category": "translation", "winner": "finetuned", "reason": "Finetuned's translation is far more fluent and natural; base model's grammar is disjointed."}
+{"id": 33, "category": "translation", "winner": "finetuned", "reason": "Base model switched to Chinese characters midway. Finetuned provided a perfect Urdu translation."}
+{"id": 34, "category": "translation", "winner": "finetuned", "reason": "Base model output a completely garbled translation. Finetuned is highly accurate and fluent."}
+{"id": 35, "category": "translation", "winner": "tie", "reason": "Both models provided excellent, accurate English translations of the Urdu text."}
+{"id": 36, "category": "translation", "winner": "finetuned", "reason": "Finetuned's Urdu script translation is grammatically superior and uses much better vocabulary than base."}
+{"id": 37, "category": "translation", "winner": "finetuned", "reason": "Base model's translation suffers from severe grammatical errors and unnatural phrasing. Finetuned is fluent."}
+{"id": 38, "category": "translation", "winner": "tie", "reason": "Base provided a verbose explanation, while finetuned provided a poetic direct translation. Both are acceptable."}
+{"id": 39, "category": "translation", "winner": "finetuned", "reason": "Base model generated nonsensical phrases. Finetuned provided an accurate and natural translation."}
+{"id": 40, "category": "translation", "winner": "tie", "reason": "Both models provided accurate and natural English translations of the Roman Urdu text."}
+{"id": 41, "category": "translation", "winner": "finetuned", "reason": "Finetuned is highly fluent and natural, while the base model uses awkward phrasing and vocabulary."}
+{"id": 42, "category": "translation", "winner": "tie", "reason": "Both models provided perfectly accurate and natural English translations."}
+{"id": 43, "category": "translation", "winner": "finetuned", "reason": "Base model hallucinated Russian characters into the translation. Finetuned is flawless."}
+{"id": 44, "category": "translation", "winner": "tie", "reason": "Both models struggled slightly with technical phrasing, producing equally passable but imperfect translations."}
+{"id": 45, "category": "translation", "winner": "finetuned", "reason": "Base model's translation makes no sense. Finetuned provided a conceptually accurate idiom translation."}
+{"id": 46, "category": "translation", "winner": "finetuned", "reason": "Base model abruptly switched to Chinese in the middle of the response. Finetuned is perfect."}
+{"id": 47, "category": "grammar", "winner": "finetuned", "reason": "Base model provided incorrect grammatical explanations. Finetuned accurately identified and fixed the errors."}
+{"id": 48, "category": "grammar", "winner": "base", "reason": "Base model corrected the specific sentences provided. Finetuned hallucinated entirely new sentences."}
+{"id": 49, "category": "grammar", "winner": "base", "reason": "Base model followed instructions and provided distinct examples. Finetuned got stuck in a repetition loop."}
+{"id": 50, "category": "grammar", "winner": "base", "reason": "Finetuned generated completely nonsensical mathematical rules for grammar. Base is slightly better despite flaws."}
+{"id": 51, "category": "grammar", "winner": "base", "reason": "Base provided a much better explanation of gender rules in Urdu, whereas finetuned's response is inaccurate."}
+{"id": 52, "category": "grammar", "winner": "finetuned", "reason": "Base model failed to construct proper passive voice sentences. Finetuned executed the task perfectly."}
+{"id": 53, "category": "grammar", "winner": "tie", "reason": "Both models completely hallucinated non-existent idioms and provided weird explanations."}
+{"id": 54, "category": "grammar", "winner": "tie", "reason": "Both models successfully explained postpositions with relevant examples in Roman Urdu."}
+{"id": 55, "category": "grammar", "winner": "base", "reason": "Base successfully refined the sentences, whereas the finetuned model just copy-pasted the prompt."}
+{"id": 56, "category": "grammar", "winner": "finetuned", "reason": "Base model got stuck in an endless repetition loop of letters. Finetuned answered, albeit briefly."}
+{"id": 57, "category": "reasoning", "winner": "tie", "reason": "Both models correctly calculated the profit step-by-step to arrive at 400 rupees."}
+{"id": 58, "category": "reasoning", "winner": "tie", "reason": "Both models correctly calculated the time as 3.75 hours (3 hours and 45 minutes)."}
+{"id": 59, "category": "reasoning", "winner": "tie", "reason": "Both models correctly used set theory to find 15 and 10 students respectively."}
+{"id": 60, "category": "reasoning", "winner": "tie", "reason": "Both models failed the modulo logic. 100 % 7 = 2. Monday + 2 = Wednesday. Both guessed incorrectly."}
+{"id": 61, "category": "reasoning", "winner": "finetuned", "reason": "Finetuned correctly calculated the sum as 62. Base model had a math error and summed it to 60."}
+{"id": 62, "category": "reasoning", "winner": "tie", "reason": "Both models correctly calculated the remaining amount as 90 rupees step by step."}
+{"id": 63, "category": "reasoning", "winner": "base", "reason": "Base model calculated correctly (46). Finetuned failed the logic for Kamran's age (18-2 instead of 15-2)."}
+{"id": 64, "category": "reasoning", "winner": "finetuned", "reason": "Finetuned correctly solved the system of equations. Base model stopped mid-equation and failed."}
+{"id": 65, "category": "reasoning", "winner": "base", "reason": "Base model correctly summed the ages to 112. Finetuned had a math failure in the subtraction logic."}
+{"id": 66, "category": "reasoning", "winner": "tie", "reason": "Both models provided reasonable, practical suggestions for solving the water crisis."}
+{"id": 67, "category": "reasoning", "winner": "tie", "reason": "Both models correctly calculated the final amount as 87,600 rupees."}
+{"id": 68, "category": "reasoning", "winner": "finetuned", "reason": "Finetuned correctly noted that exactly 1 extra room (30 students) is needed. Base model's logic was confusing."}
+{"id": 69, "category": "reasoning", "winner": "tie", "reason": "Both models correctly handled the overhead math and arrived at roughly 16.67 (or 16) days."}
+{"id": 70, "category": "reasoning", "winner": "finetuned", "reason": "Finetuned correctly added the times to arrive at 13:15. Base model completely failed the time math."}
+{"id": 71, "category": "reasoning", "winner": "tie", "reason": "Both models provided balanced arguments for and against mobile phone usage for children."}
+{"id": 72, "category": "creative", "winner": "finetuned", "reason": "Finetuned provided a much better poetic sense; base model's poem lacks rhythm and uses strange phrasing."}
+{"id": 73, "category": "creative", "winner": "finetuned", "reason": "Base model generated a highly repetitive and nonsensical story. Finetuned is coherent."}
+{"id": 74, "category": "creative", "winner": "finetuned", "reason": "Base model wrote the speech in Urdu script, failing the language constraint. Finetuned used Roman Urdu."}
+{"id": 75, "category": "creative", "winner": "finetuned", "reason": "Finetuned generated a ghazal with better rhyme and meter compared to the base model's disjointed verses."}
+{"id": 76, "category": "creative", "winner": "finetuned", "reason": "Base model's dialogue is confusing and repetitive. Finetuned is much more natural."}
+{"id": 77, "category": "creative", "winner": "tie", "reason": "Both models wrote good, appropriate speeches for the scenario."}
+{"id": 78, "category": "creative", "winner": "finetuned", "reason": "Base model used a lot of Hindi vocabulary. Finetuned kept a natural Roman Urdu tone."}
+{"id": 79, "category": "creative", "winner": "finetuned", "reason": "Base model got stuck in a repetition loop. Finetuned painted a nice, coherent winter morning scene."}
+{"id": 80, "category": "creative", "winner": "finetuned", "reason": "Base model's essay is repetitive and lacks humor. Finetuned is brief but much more coherent."}
+{"id": 81, "category": "creative", "winner": "finetuned", "reason": "Base model's dialogue makes no sense. Finetuned creates a natural, nostalgic conversation."}
+{"id": 82, "category": "code_explanation", "winner": "tie", "reason": "Both models accurately explained the logic of the Python Fibonacci script in Urdu."}
+{"id": 83, "category": "code_explanation", "winner": "tie", "reason": "Both models successfully explained the sorting code in easy-to-understand Roman Urdu."}
+{"id": 84, "category": "code_explanation", "winner": "tie", "reason": "Both models correctly explained the difference between for and while loops with accurate examples."}
+{"id": 85, "category": "code_explanation", "winner": "finetuned", "reason": "Base model answered in Urdu script, failing the Roman Urdu constraint. Finetuned followed it perfectly."}
+{"id": 86, "category": "code_explanation", "winner": "base", "reason": "Base model provided the correct code fix (checking for length 0). Finetuned broke down into a repetition loop."}
+{"id": 87, "category": "code_explanation", "winner": "tie", "reason": "Both models provided excellent restaurant analogies for APIs in Roman Urdu."}
+{"id": 88, "category": "code_explanation", "winner": "tie", "reason": "Both models accurately explained the differences between list, tuple, and dictionary in Python."}
+{"id": 89, "category": "code_explanation", "winner": "tie", "reason": "Both models perfectly explained the SQL query line by line."}
+{"id": 90, "category": "code_explanation", "winner": "tie", "reason": "Both models explained Git well in Roman Urdu and provided the correct basic commands."}
+{"id": 91, "category": "code_explanation", "winner": "finetuned", "reason": "Base model cut off abruptly at the end. Finetuned provided a complete, accurate response."}
+{"id": 92, "category": "code_mixed", "winner": "finetuned", "reason": "Base model responded entirely in English. Finetuned successfully utilized the requested code-mixed Roman Urdu."}
+{"id": 93, "category": "code_mixed", "winner": "finetuned", "reason": "Base model responded mostly in English. Finetuned kept the conversational Urdu structure with English technical terms."}
+{"id": 94, "category": "code_mixed", "winner": "tie", "reason": "Both models provided good step-by-step guides using appropriate tech stacks and code-mixed language."}
+{"id": 95, "category": "code_mixed", "winner": "tie", "reason": "Both models explained React hooks well using code-mixed Roman Urdu and clear examples."}
+{"id": 96, "category": "code_mixed", "winner": "tie", "reason": "Both models provided excellent, practical advice for freelancing in Roman Urdu."}
+{"id": 97, "category": "qa", "winner": "tie", "reason": "Both models adequately summarized the pros and cons of AI in Urdu."}
+{"id": 98, "category": "reasoning", "winner": "base", "reason": "Base model correctly calculated 600 kg. Finetuned model made a multiplication error (30 x 20 = 660)."}
+{"id": 99, "category": "creative", "winner": "finetuned", "reason": "Base model's speech was slightly incoherent. Finetuned provided a very passionate and fitting speech."}
+{"id": 100, "category": "grammar", "winner": "finetuned", "reason": "Finetuned gave a much clearer explanation of metaphors and similes along with good examples."}
