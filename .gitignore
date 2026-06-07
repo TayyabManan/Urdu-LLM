@@ -56,8 +56,18 @@ wandb/
 vector_db/
 *.qdrant_lock
 
-# Empty / WIP eval outputs (populated by scripts/22_run_rag_eval.py)
+# Tier 1.2 RAG eval artifacts — kept local for v3, not committed publicly
 data/eval/v2/rag_outputs.jsonl
+data/eval/v2/rag_base_outputs.jsonl
+data/eval/v2/rag_vs_ft_aggregate.png
+data/eval/v2/judges/*/rag_vs_ft/
+WRITEUP_TIER_1_2_RAG.md
+
+# HF push staging dir: weights live on HF Hub (canonical). Keep model card text only.
+hf_publish/*
+!hf_publish/qwen2.5-7b-urdu-v2/
+hf_publish/qwen2.5-7b-urdu-v2/*
+!hf_publish/qwen2.5-7b-urdu-v2/README.md
 
 # Logs
 *.log
