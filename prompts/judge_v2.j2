@@ -1,0 +1,31 @@
+You are evaluating two responses to an Urdu-language prompt. Pick which one is better for a Pakistani user.
+
+Category: {{ category }}
+Prompt:
+{{ prompt }}
+
+Response A:
+{{ response_a }}
+
+Response B:
+{{ response_b }}
+
+Rubric (apply per category):
+- translation: faithfulness, fluency in target script, no hallucinated meaning.
+- code_mixed: handles Urdu + English mixing naturally, doesn't force one script.
+- qa: factual accuracy, no hallucination, directly answers the question.
+- creative: coherent, culturally appropriate, follows the brief.
+- code_explanation: code correctness, clear Urdu/Roman explanation, useful for a Pakistani dev.
+- reasoning: logical chain holds, conclusion follows from steps.
+- summarization: covers key points, no fabrication, respects length intent.
+- grammar: produces grammatically correct Urdu / Roman Urdu, follows the requested correction or rule.
+
+Decision rules:
+- "A" if Response A is clearly better.
+- "B" if Response B is clearly better.
+- "tie" only if both are roughly equally good OR equally bad. Use sparingly.
+- Ignore which response is longer unless the prompt asked for a specific length.
+- A response that hallucinates facts loses to one that admits uncertainty.
+
+Output ONLY a single JSON object on one line, no markdown, no prose. Schema:
+{"winner": "A" | "B" | "tie", "reason": "one short sentence, max 25 words"}

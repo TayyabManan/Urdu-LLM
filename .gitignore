@@ -52,6 +52,13 @@ wandb/
 # Modal
 .modal/
 
+# Local Qdrant + sidecar vector indexes (regenerable from scripts/20*.py on Modal)
+vector_db/
+*.qdrant_lock
+
+# Empty / WIP eval outputs (populated by scripts/22_run_rag_eval.py)
+data/eval/v2/rag_outputs.jsonl
+
 # Logs
 *.log
 logs/
