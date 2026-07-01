@@ -4,41 +4,55 @@ A 30-day public build of a Qwen 2.5 7B Instruct fine-tune specialised on Urdu
 (Urdu script + Roman Urdu + code-mixed), shipped openly with the full pipeline:
 data prep → QLoRA training → multi-judge evaluation → optional RAG layer.
 
-🤗 **Model:** [TayyabManan/qwen2.5-7b-urdu-v2](https://huggingface.co/TayyabManan/qwen2.5-7b-urdu-v2)
+🤗 **Model:** [TayyabManan/qwen2.5-7b-urdu-v3](https://huggingface.co/TayyabManan/qwen2.5-7b-urdu-v3) · [v2](https://huggingface.co/TayyabManan/qwen2.5-7b-urdu-v2)
 🎮 **Live demo:** [Space — TayyabManan/urdu-llm-chat](https://huggingface.co/spaces/TayyabManan/urdu-llm-chat)
-📋 **Original roadmap:** [`urdu-llm-roadmap.md`](./urdu-llm-roadmap.md)
+📋 **Original roadmap:** [`urdu-llm-roadmap.md`](./urdu-llm-roadmap.md) · **v3 write-up:** [`WRITEUP_V3.md`](./WRITEUP_V3.md)
 
 ---
 
 ## Headline
 
-**66% median pairwise win rate vs base Qwen 2.5 7B Instruct across 3 independent
-LLM judges** on a 100-prompt hand-curated Urdu evaluation set. Range 48–67%.
+**v3: 79.5% pairwise win rate vs base Qwen 2.5 7B Instruct across 2 independent
+LLM judges** (Claude + GPT-5.3), on a 100-prompt hand-curated Urdu evaluation set —
+up from v2's 66%. **All three v2 regressions (summarization, grammar, reasoning) recovered.**
 
-| Judge | Win rate vs base |
-|---|---|
-| Claude Desktop (Opus 4.7) | 67.0% |
-| GPT 5.3 Thinking | 66.0% |
-| Gemini 3.1 Pro | 48.0% |
-| **Median (3 judges)** | **66.0%** |
+### v3 per-category win rate vs base
 
-Plus a 4th automated judge via Claude Code CLI subprocess (excluded from
-median due to 79% same-model agreement with Claude Desktop): 65.0%.
-
-### Per-category, median across 3 judges
-
-| Category | Win rate | Note |
+| Category | v3 win rate | vs v2 |
 |---|---|---|
-| Creative writing | 91% | strong gain |
-| Code-mixed (Urdu/English) | 80% | v1 was 0% |
-| Translation (UR↔EN) | 80% | |
-| Question Answering | 71% | |
-| Code explanation in Urdu | 60% | |
-| Summarisation | 46% | **regressed** from v1's 73% |
-| Reasoning | 31% | regressed (44%→31%) |
-| Grammar correction | 36% | regressed (40%→36%) |
+| Creative writing | 100% | ↑ |
+| Translation (UR↔EN) | 97% | ↑ |
+| Summarization | 82% | ↑↑ (v2 had regressed to 46%) |
+| Grammar correction | 82% | ↑↑ (v2 had regressed to 36%) |
+| Question Answering | 79% | ↑ |
+| Code explanation in Urdu | 75% | ↑ |
+| Code-mixed (Urdu/English) | 70% | ~ |
+| Reasoning | 53% | ↑↑ (v2 was 31%) — still the soft spot |
 
-The regressions are the v3 work-list.
+> **v3 vs v2, head-to-head:** v3 wins only **43%** of direct matchups — a *rebalance*,
+> not a strict upgrade. It clearly wins summarization / grammar / code-mixed but trades
+> away some translation / reasoning / QA. There's no free lunch in the data mix.
+
+### RAG (Urdu Wikipedia retrieval) — the honest result
+
+v3 is trained on the exact `{context}\n\nسوال:{query}` surface the retrieval endpoint
+serves, which fixed RAG's structural failure. Base Qwen fed Urdu RAG context leaked
+Chinese on **45/100** answers; **v3 + RAG leaks Chinese on 0/100** — now deployable. On
+factual prompts RAG *corrects* the model (Pakistan's largest province by area: plain v3
+says "Punjab" — wrong — RAG says "Balochistan, 347,190 km²" from the retrieved article).
+But across the full 100-prompt set RAG beats plain v3 only **15.5%** of the time: ~79 of
+the prompts are creative / grammar / reasoning where retrieved Wikipedia is pure noise.
+**RAG is a safe, deployable grounding tool for factual queries — not a blanket upgrade.**
+Full analysis in [`WRITEUP_V3.md`](./WRITEUP_V3.md).
+
+<details>
+<summary>v2 headline (previous release)</summary>
+
+66% median pairwise win rate vs base across 3 judges (Claude Desktop 67% / GPT-5.3 66% /
+Gemini 3.1 Pro 48%). Per-category regressions on summarization (46%), reasoning (31%),
+and grammar (36%) were the v3 work-list — now fixed.
+
+</details>
 
 ---
 
@@ -56,7 +70,7 @@ import torch
 model, tokenizer = FastLanguageModel.from_pretrained(
     "Qwen/Qwen2.5-7B-Instruct", max_seq_length=4096, load_in_4bit=True,
 )
-model = PeftModel.from_pretrained(model, "TayyabManan/qwen2.5-7b-urdu-v2")
+model = PeftModel.from_pretrained(model, "TayyabManan/qwen2.5-7b-urdu-v3")
 FastLanguageModel.for_inference(model)
 
 messages = [
@@ -71,7 +85,7 @@ with torch.inference_mode():
 print(tokenizer.decode(out[0][inputs.input_ids.shape[1]:], skip_special_tokens=True))
 ```
 
-See the [model card](https://huggingface.co/TayyabManan/qwen2.5-7b-urdu-v2) for recommended decoding per use case.
+See the [model card](https://huggingface.co/TayyabManan/qwen2.5-7b-urdu-v3) for recommended decoding per use case.
 
 ---
 
@@ -132,14 +146,32 @@ Writes `data/eval/v2/judges/<judge>/judged_eval_results_v2.jsonl` per judge.
 python scripts/17_aggregate_judges.py   # prints per-category, writes aggregate.png
 ```
 
-### Tier 1.2 RAG (deferred to v3)
+### v3 pipeline (data → train → eval)
 
-A RAG layer over Urdu Wikipedia was prototyped on top of v2 but didn't beat
-plain v2-FT — the current FT model was trained on direct Q→A pairs only, so
-prepended retrieved chunks push generation out of distribution. The fix is
-upstream: v3 will include `(query, context, grounded-answer)` triples in the
-training mix so the model actually learns to use retrieved context. RAG ships
-properly with v3.
+v3 adds ~5,700 synthetic examples on top of the v2 mix to fix the regressions and make
+retrieval work. All new data is grounded + deterministically checked, then human
+spot-checked (200 rows) before spending money on training.
+
+```bash
+python scripts/24_generate_grammar_pairs.py   # grammar-correction pairs (gold = trusted source, never a model rewrite)
+python scripts/25_generate_summ_reason.py     # summarization (verified sentence count) + reasoning (Python owns the arithmetic)
+python scripts/23_generate_rag_triples.py     # (query, context, grounded-answer) triples in the exact /rag surface
+python scripts/spot_check_sample.py           # pull 200 rows for manual review
+python scripts/26_combine_and_upload_v3.py    # combine with v2 set → train_v3.jsonl (modal run to upload)
+modal run   scripts/27_retrain_v3.py          # QLoRA, 2 epochs, seq_len 4096 → /vol/7b-v3-adapter
+modal deploy scripts/19_serve_ft_endpoint.py  # serve v3 (RAG_ADAPTER_DIR defaults to the v3 adapter)
+python scripts/28_run_eval_v3.py              # generate v3 outputs (plain + RAG)
+python scripts/18_run_judges.py --judges claude openai   # judge
+python scripts/17_aggregate_judges.py         # v3-vs-base table + plot
+python scripts/17b_aggregate_rag_vs_ft.py     # RAG-vs-plain-FT aggregate
+```
+
+**Tier 1.2 RAG — the finding.** A RAG layer over Urdu Wikipedia was first prototyped on
+v2 and failed structurally: v2 was trained on direct Q→A pairs only, so prepended chunks
+were out-of-distribution, and the *base* model leaked Chinese on 45/100 RAG answers. v3
+trains on `(query, context, grounded-answer)` triples in the exact retrieval surface — the
+Chinese leakage drops to 0/100 and RAG becomes a safe grounding tool for factual queries.
+It does **not** become a blanket win (15.5% over plain v3). See [`WRITEUP_V3.md`](./WRITEUP_V3.md).
 
 ---
 
@@ -152,7 +184,7 @@ properly with v3.
 │   ├── code_roman/          # 1,671 LLM-generated code-mixed (Urdu/English) examples
 │   ├── roman_urdu/          # Roman Urdu transliterations (v1)
 │   └── roman_urdu_v2/       # Roman Urdu transliterations (v2)
-├── prompts/                 # j2 templates: judge_v2.j2, rag_v1.j2
+├── prompts/                 # j2 templates: judge_v2.j2
 ├── src/
 │   ├── eval/                # Judging components: Claude Code subprocess, OpenAI, Haystack pipeline
 │   └── rag/                 # Chunking + thin HTTP client to Modal /rag
@@ -178,9 +210,10 @@ properly with v3.
 2. **v1 (Week 1-2):** 3-epoch QLoRA on 50k Alpaca-translated examples. 51.5% wins, single judge. Code Mixed 0%, Code Explanation 10% — catastrophic forgetting on coding tasks because the training mix was Urdu-script-only.
 3. **v2 (Week 3-4):** Added 1.6k code-mixed + 5k Roman Urdu examples. 2 epochs (not 3 — 3 overfit). Re-eval with 3 cross-model judges → **66% median, 91% creative, 80% translation + code-mixed**. Per-category regressions on summarisation/grammar/reasoning identified for v3.
 4. **Tier 1.1 (Day 32):** Automated multi-judge evaluation pipeline. Claude Code subprocess via Max subscription replaces manual judging. Validated that auto judges score 8-14pp HIGHER than manual on the same outputs (position bias).
-5. **Tier 1.2 RAG (deferred):** Prototyped a RAG layer; current FT model can't use prepended context (Q→A training only). Pivot: v3 will add RAG-format training data so the layer actually works.
+5. **Tier 1.2 RAG (v2 attempt):** Prototyped a RAG layer; the v2 FT model couldn't use prepended context (Q→A training only) and the base model leaked Chinese. Pivot: fold RAG-format data into v3 training.
+6. **v3 (Week 5):** +5.7k synthetic examples (grammar / summarization / reasoning / RAG triples), all deterministically checked and human spot-checked (200 rows — caught 2 systemic generator bugs the auto-tests missed). 2 epochs, seq_len 4096. Re-eval → **79.5% vs base across 2 judges**, all three regressions recovered. RAG Chinese leakage 45/100 → **0/100**. But v3-vs-v2 is a 43% rebalance and RAG wins only 15.5% — [documented honestly](./WRITEUP_V3.md), not oversold.
 
-Total cost: ~$50 of $80 budget ceiling.
+Total cost: ~$60 of $80 budget ceiling (v3 added ~$9-10: $0.63 data, ~$5-6 training, ~$2-3 eval).
 
 ---
 

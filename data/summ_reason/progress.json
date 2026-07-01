@@ -1,0 +1,9 @@
+{
+  "summ_done": 1004,
+  "reason_done": 863,
+  "reason_roman": 217,
+  "articles_consumed": 1407,
+  "total_input_tokens": 1150255,
+  "total_output_tokens": 519517,
+  "total_cost": 0.4842484500000002
+}

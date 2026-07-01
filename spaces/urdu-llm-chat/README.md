@@ -1,5 +1,5 @@
 ---
-title: Urdu LLM Chat (Qwen 2.5 7B + v2 LoRA)
+title: Urdu LLM Chat (Qwen 2.5 7B + v3 LoRA)
 emoji: 💬
 colorFrom: green
 colorTo: gray
@@ -11,16 +11,18 @@ pinned: false
 license: apache-2.0
 short_description: Fine-tuned Qwen 2.5 7B for Urdu instruction-following
 models:
-- TayyabManan/qwen2.5-7b-urdu-v2
+- TayyabManan/qwen2.5-7b-urdu-v3
 ---
 
 # Urdu LLM Chat
 
-A Gradio demo for [Qwen 2.5 7B Urdu (v2 LoRA)](https://huggingface.co/TayyabManan/qwen2.5-7b-urdu-v2),
-a QLoRA fine-tune of Qwen 2.5 7B Instruct on 63k Urdu instruction-response pairs.
+A Gradio demo for [Qwen 2.5 7B Urdu (v3 LoRA)](https://huggingface.co/TayyabManan/qwen2.5-7b-urdu-v3),
+a QLoRA fine-tune of Qwen 2.5 7B Instruct on ~69k Urdu instruction-response pairs
+(including RAG-format triples so the model can use retrieved context).
 
-**66% median pairwise preference vs base Qwen** across three independent LLM
-judges on a 100-prompt evaluation set.
+**79.5% pairwise preference vs base Qwen** across two independent LLM judges on a
+100-prompt evaluation set — all three v2 regressions (summarization, grammar,
+reasoning) recovered.
 
 ## How this Space works
 

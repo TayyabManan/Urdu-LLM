@@ -55,6 +55,9 @@ def main():
     parser.add_argument("--temperature", type=float, default=0.3)
     parser.add_argument("--resume", action="store_true",
                         help="Skip ids already in --out")
+    parser.add_argument("--base-model", action="store_true",
+                        help="Use base Qwen (LoRA disabled) for RAG generation. "
+                             "Writes to rag_base_response field instead of rag_response.")
     args = parser.parse_args()
 
     if not args.prompts.exists():
@@ -89,11 +92,13 @@ def main():
     todo = [p for p in prompts if p["id"] not in done_ids]
     print(f"Generating {len(todo)} RAG responses...")
 
+    rag_key = "rag_base_response" if args.base_model else "rag_response"
+    titles_key = "rag_base_retrieved_titles" if args.base_model else "retrieved_titles"
     with args.out.open("a", encoding="utf-8") as fout:
         for i, p in enumerate(todo, start=1):
             pid = p["id"]
             try:
-                result = query_rag(pipeline, p["prompt"])
+                result = query_rag(pipeline, p["prompt"], use_adapter=not args.base_model)
             except Exception as e:
                 print(f"  [id={pid}] FAILED: {e!r}")
                 continue
@@ -105,8 +110,8 @@ def main():
                 "prompt": p["prompt"],
                 "base_response": baseline.get("base_response", ""),
                 "finetuned_response": baseline.get("finetuned_response", ""),
-                "rag_response": result["answer"],
-                "retrieved_titles": [s.get("title") for s in result["sources"]],
+                rag_key: result["answer"],
+                titles_key: [s.get("title") for s in result["sources"]],
             }
             fout.write(json.dumps(row, ensure_ascii=False) + "\n")
             fout.flush()

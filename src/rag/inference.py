@@ -74,7 +74,8 @@ def build_rag_pipeline(
     )
 
 
-def query_rag(client: RAGClient, query: str, system: str = DEFAULT_SYSTEM) -> dict:
+def query_rag(client: RAGClient, query: str, system: str = DEFAULT_SYSTEM,
+              use_adapter: bool = True, mode: str = "hybrid") -> dict:
     payload = {
         "query": query,
         "top_k": client.top_k,
@@ -82,8 +83,12 @@ def query_rag(client: RAGClient, query: str, system: str = DEFAULT_SYSTEM) -> di
         "temperature": client.temperature,
         "top_p": client.top_p,
         "repetition_penalty": client.repetition_penalty,
+        "use_adapter": use_adapter,
+        "mode": mode,
     }
-    with httpx.Client(timeout=client.timeout_s) as http:
+    # follow_redirects: a cold container returns Modal's 303 async-poll redirect
+    # when the first request outlasts the sync window; following it returns the result.
+    with httpx.Client(timeout=client.timeout_s, follow_redirects=True) as http:
         r = http.post(client.rag_url, json=payload)
         r.raise_for_status()
         data = r.json()
@@ -93,5 +98,7 @@ def query_rag(client: RAGClient, query: str, system: str = DEFAULT_SYSTEM) -> di
         "meta": {
             "tokens_in": data.get("tokens_in"),
             "tokens_out": data.get("tokens_out"),
+            "mode": data.get("mode"),
+            "used_adapter": data.get("used_adapter", True),
         },
     }

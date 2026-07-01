@@ -1,4 +1,4 @@
-"""HuggingFace Spaces frontend for the Urdu LLM v2 (Qwen 2.5 7B + LoRA).
+"""HuggingFace Spaces frontend for the Urdu LLM v3 (Qwen 2.5 7B + LoRA).
 
 Free-tier Spaces (no GPU) can't host a 7B model, so this app is a thin Gradio
 proxy that POSTs to a Modal endpoint where the actual model lives. The Modal
@@ -15,14 +15,14 @@ ENDPOINT = os.environ.get("FT_ENDPOINT_URL")
 TIMEOUT_S = 300  # Modal cold-starts up to ~3 min on first call
 DEFAULT_SYSTEM = "You are a helpful assistant."
 
-MODEL_TITLE = "Qwen 2.5 7B Urdu (v2 LoRA)"
-HF_MODEL_URL = "https://huggingface.co/TayyabManan/qwen2.5-7b-urdu-v2"
+MODEL_TITLE = "Qwen 2.5 7B Urdu (v3 LoRA)"
+HF_MODEL_URL = "https://huggingface.co/TayyabManan/qwen2.5-7b-urdu-v3"
 GH_REPO_URL = "https://github.com/TayyabManan/Urdu-LLM"
 
 INTRO = f"""# {MODEL_TITLE}
 
 Fine-tuned Qwen 2.5 7B Instruct for Urdu (Urdu script + Roman Urdu + code-mixed).
-**66% median wins vs base Qwen across 3 LLM judges** on a 100-prompt hand-curated set.
+**79.5% win rate vs base Qwen across 2 LLM judges** on a 100-prompt hand-curated set.
 
 This Space is a Gradio frontend; the model runs on a private GPU endpoint (Modal H100).
 First call may take 30-90s while the container warms up. Subsequent calls are 2-8s.
@@ -82,7 +82,7 @@ def call_endpoint(prompt: str, system: str, max_tokens: int, temperature: float)
         meta = f"\n\n---\n_↳ {elapsed:.1f}s"
         if tokens_out:
             meta += f" · {tokens_out} tokens out"
-        meta += " · model: Qwen 2.5 7B + v2 LoRA · top_p 0.9, rep_penalty 1.1_"
+        meta += " · model: Qwen 2.5 7B + v3 LoRA · top_p 0.9, rep_penalty 1.1_"
         yield text + meta
     except httpx.TimeoutException:
         yield ("⚠️ **Endpoint timed out** after 5 minutes. The GPU container "
@@ -98,33 +98,106 @@ CUSTOM_CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;700&display=swap');
 
-/* Nastaliq for Arabic-script chars only (Google Fonts unicode-range scopes it);
-   system font falls through for Latin. Naskh as Nastaliq fallback for systems
-   without Nastaliq rendering support. */
-.urdu-io, .urdu-io textarea, .urdu-io input, .urdu-io p, .urdu-io li {
-    font-family: 'Noto Nastaliq Urdu', 'Noto Naskh Arabic', 'Jameel Noori Nastaleeq',
-                 system-ui, -apple-system, 'Segoe UI', sans-serif !important;
-    font-size: 1.05rem;
-    line-height: 2.1;
-}
-
-/* Markdown output gets extra leading because Nastaliq has tall descenders */
-.urdu-io {
-    direction: rtl;
-    unicode-bidi: plaintext;  /* per-line direction by first strong char — handles mixed Urdu/Latin */
+/* Base for input/output containers — moderate line-height that works for either script
+   (the SCRIPT_DETECT_JS observer below tags individual elements with lang=ur|en
+   for per-paragraph script-aware styling, see rules further down). */
+.urdu-io, .urdu-io textarea, .urdu-io input {
+    font-family: 'Noto Nastaliq Urdu', 'Noto Naskh Arabic', system-ui,
+                 -apple-system, 'Segoe UI', sans-serif !important;
+    font-size: 1.0rem;
+    line-height: 1.75;
+    unicode-bidi: plaintext;
     text-align: start;
 }
 
-/* Examples row keep more compact */
+/* Input textarea: rtl base (matches placeholder), but each line auto-flips by first char */
+.urdu-io textarea {
+    direction: rtl;
+}
+
+/* === Script-aware per-element styling (JS-tagged via MutationObserver) === */
+/* Urdu/Arabic — Nastaliq w/ tall leading and right-aligned RTL */
+.urdu-io [lang="ur"], .urdu-io [lang="ar"], .urdu-io [data-script="arabic"] {
+    font-family: 'Noto Nastaliq Urdu', 'Noto Naskh Arabic', 'Jameel Noori Nastaleeq',
+                 serif !important;
+    font-size: 1.1rem;
+    line-height: 2.15;
+    direction: rtl;
+    text-align: right;
+}
+
+/* English / Roman Urdu — clean sans-serif w/ normal leading and LTR */
+.urdu-io [lang="en"], .urdu-io [data-script="latin"] {
+    font-family: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue',
+                 sans-serif !important;
+    font-size: 1.0rem;
+    line-height: 1.55;
+    direction: ltr;
+    text-align: left;
+}
+
+/* Examples row stays compact */
 .gradio-container .examples { font-size: 0.95rem; }
 
 footer { visibility: hidden }
+"""
+
+SCRIPT_DETECT_JS = """
+() => {
+    // Arabic-script Unicode ranges used by Urdu (+ Arabic supplements + presentation forms)
+    const arabicRe = /[\\u0600-\\u06FF\\u0750-\\u077F\\u0870-\\u089F\\u08A0-\\u08FF\\uFB50-\\uFDFF\\uFE70-\\uFEFF]/;
+    const latinRe = /[A-Za-z]/;
+
+    function tagScript(root) {
+        const blocks = root.querySelectorAll(
+            '.urdu-io p, .urdu-io li, .urdu-io h1, .urdu-io h2, .urdu-io h3, .urdu-io blockquote'
+        );
+        blocks.forEach(el => {
+            const txt = (el.textContent || '').trim();
+            if (!txt) return;
+            const arabicCount = (txt.match(/[\\u0600-\\u06FF\\u0750-\\u077F\\u0870-\\u089F\\u08A0-\\u08FF\\uFB50-\\uFDFF\\uFE70-\\uFEFF]/g) || []).length;
+            const latinCount = (txt.match(/[A-Za-z]/g) || []).length;
+            // Tag by dominant script — ties + no-script (numbers/punct only) default to current
+            if (arabicCount > latinCount && arabicCount > 0) {
+                el.setAttribute('lang', 'ur');
+                el.setAttribute('dir', 'rtl');
+            } else if (latinCount > 0) {
+                el.setAttribute('lang', 'en');
+                el.setAttribute('dir', 'ltr');
+            }
+        });
+    }
+
+    // Initial pass (catches static content)
+    tagScript(document);
+
+    // Re-tag whenever Gradio updates the DOM (streaming output, etc.)
+    const observer = new MutationObserver((mutations) => {
+        let needs_retag = false;
+        for (const m of mutations) {
+            if (m.type === 'childList' || m.type === 'characterData') {
+                needs_retag = true;
+                break;
+            }
+        }
+        if (needs_retag) {
+            // Debounce via rAF to avoid layout thrash
+            requestAnimationFrame(() => tagScript(document));
+        }
+    });
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        characterData: true,
+    });
+}
 """
 
 with gr.Blocks(
     title=MODEL_TITLE,
     theme=gr.themes.Soft(primary_hue="green"),
     css=CUSTOM_CSS,
+    js=SCRIPT_DETECT_JS,
 ) as demo:
     gr.Markdown(INTRO)
 

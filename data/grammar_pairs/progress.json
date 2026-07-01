@@ -1,0 +1,10 @@
+{
+  "done": 2007,
+  "urdu_cursor": 1630,
+  "roman_cursor": 561,
+  "urdu_written": 1505,
+  "roman_written": 502,
+  "total_input_tokens": 257106,
+  "total_output_tokens": 87444,
+  "total_cost": 0.09103229999999997
+}

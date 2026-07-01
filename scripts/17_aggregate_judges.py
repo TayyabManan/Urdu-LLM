@@ -18,12 +18,21 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 ROOT = Path(__file__).parent.parent
-JUDGES_DIR = ROOT / "data" / "eval" / "v2" / "judges"
 
 parser = argparse.ArgumentParser()
+parser.add_argument("--judges-dir", default=str(ROOT / "data" / "eval" / "v2" / "judges"),
+                    help="directory of per-judge verdict folders (default: v2)")
+parser.add_argument("--out-dir", default=None,
+                    help="directory for the output PNG (default: the judges-dir parent)")
+parser.add_argument("--label", default=None,
+                    help="version label for the chart title (default: inferred from judges-dir)")
 parser.add_argument("--exclude", nargs="*", default=[], help="judge folder names to exclude")
-parser.add_argument("--out", default=None, help="output filename (placed in data/eval/v2/)")
+parser.add_argument("--out", default=None, help="output PNG filename")
 args = parser.parse_args()
+
+JUDGES_DIR = Path(args.judges_dir)
+OUT_BASE = Path(args.out_dir) if args.out_dir else JUDGES_DIR.parent
+LABEL = args.label or ("v3" if "v3" in str(JUDGES_DIR) else "v2")
 
 if args.out:
     out_name = args.out
@@ -31,7 +40,7 @@ elif args.exclude:
     out_name = f"aggregate_excl_{'_'.join(args.exclude)}.png"
 else:
     out_name = "aggregate.png"
-OUT_PNG = ROOT / "data" / "eval" / "v2" / out_name
+OUT_PNG = OUT_BASE / out_name
 
 CATEGORIES = ["translation", "code_mixed", "qa", "creative",
               "code_explanation", "reasoning", "summarization", "grammar"]
@@ -147,7 +156,7 @@ ax.set_xticklabels([CATEGORY_LABELS[c] for c in cats_sorted], fontsize=10)
 ax.set_ylabel("Win rate vs base model (%)", fontsize=11)
 ax.set_ylim(-5, 110)
 ax.set_yticks(range(0, 101, 20))
-ax.set_title(f"Urdu LLM v2 — {len(judges)} Judges Compared by Category",
+ax.set_title(f"Urdu LLM {LABEL} — {len(judges)} Judges Compared by Category",
              fontsize=14, fontweight="bold", pad=14)
 ax.legend(loc="lower left", frameon=False, fontsize=9, ncol=2)
 ax.spines["top"].set_visible(False)

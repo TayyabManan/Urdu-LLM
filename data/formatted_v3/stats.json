@@ -1,0 +1,42 @@
+{
+  "v2_base": 63322,
+  "v3_new": 5675,
+  "total": 68997,
+  "max_n_tokens": 2467,
+  "limits": {
+    "non_rag": 2048,
+    "rag": 3900
+  },
+  "per_file": {
+    "grammar_pairs.jsonl": {
+      "kept": 2007,
+      "skipped_clean": 0,
+      "skipped_long": 0,
+      "limit": 2048
+    },
+    "summ_reason.jsonl": {
+      "kept": 1867,
+      "skipped_clean": 0,
+      "skipped_long": 0,
+      "limit": 2048
+    },
+    "rag_triples.jsonl": {
+      "kept": 1801,
+      "skipped_clean": 0,
+      "skipped_long": 0,
+      "limit": 3900
+    }
+  },
+  "by_source": {
+    "rag-grounded-synthetic": 1801,
+    "urdu-instruct": 50963,
+    "urdu-instruct-roman-v2": 4985,
+    "grammar-correction-synthetic": 2007,
+    "summ-synthetic": 1004,
+    "urdu-instruct-roman": 4294,
+    "aya-urdu": 478,
+    "redgerd-roman": 931,
+    "reason-synthetic": 863,
+    "code-roman-synthetic": 1671
+  }
+}

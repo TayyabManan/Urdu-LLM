@@ -1,0 +1,100 @@
+{"id": 1, "category": "qa", "winner": "finetuned", "reason": "B correctly names Punjab as Pakistan's largest province; A hallucinates a nonexistent 'Asia province' with fabricated, incoherent facts."}
+{"id": 2, "category": "qa", "winner": "base", "reason": "Both hallucinate, but B touches real concepts (tolerance, debates, Din-i-Ilahi) while A is entirely off-topic about architecture and Delhi."}
+{"id": 3, "category": "qa", "winner": "finetuned", "reason": "Both weak, but A is fluent and concise despite one fabrication; B is incoherent, ungrammatical, repetitive, and truncated."}
+{"id": 4, "category": "qa", "winner": "finetuned", "reason": "B gives accurate season names and real facts despite minor errors; A is incoherent gibberish with hallucinated, meaningless content."}
+{"id": 5, "category": "qa", "winner": "finetuned", "reason": "B gives coherent answer near-correct despite Pluto error; A is incoherent hallucinated gibberish with fabricated numbers."}
+{"id": 6, "category": "qa", "winner": "base", "reason": "A is mostly accurate explaining LBW basics despite awkward wording; B hallucinates ('Line of Death') and is nonsense."}
+{"id": 7, "category": "qa", "winner": "finetuned", "reason": "B gives correct H₂O formula with coherent, accurate reasons; A is garbled, hallucinated nonsense and cuts off mid-sentence."}
+{"id": 8, "category": "qa", "winner": "finetuned", "reason": "B accurately names Iqbal's core themes (khudi, unity, freedom); A is incoherent word-salad with hallucinated nonsense."}
+{"id": 9, "category": "qa", "winner": "finetuned", "reason": "A is fluent and factually correct; B has broken Urdu phrasing and a garbled, confusing final sentence."}
+{"id": 10, "category": "qa", "winner": "finetuned", "reason": "A correctly lists the five pillars (though توحید should be شہادہ); B is incoherent gibberish with hallucinated, wrong content."}
+{"id": 11, "category": "qa", "winner": "finetuned", "reason": "A gives accurate facts about Indus Valley Civilization; B hallucinates a fictional 1987 educational union entirely off-topic."}
+{"id": 12, "category": "qa", "winner": "finetuned", "reason": "B answers in Roman Urdu covering prevention; A is garbled Hindi/Devanagari, hallucinated, off-script, and never explains prevention."}
+{"id": 13, "category": "qa", "winner": "finetuned", "reason": "Response A is incoherent hallucinated gibberish; B is brief but factually grounded (1947, partition, Muslim nationhood)."}
+{"id": 14, "category": "qa", "winner": "finetuned", "reason": "B factually correct (1969, Apollo 11); A riddled with hallucinations—wrong date, fake crew names, India fire, garbled gibberish."}
+{"id": 15, "category": "qa", "winner": "finetuned", "reason": "Both inaccurate, but A is broken Hindi/gibberish unreadable for Pakistani user; B at least stays in Roman Urdu though factually weak."}
+{"id": 16, "category": "qa", "winner": "finetuned", "reason": "A directly and fluently answers; B is rambling, grammatically broken, self-contradictory, and full of hallucinated figures despite a vaguer number."}
+{"id": 18, "category": "qa", "winner": "finetuned", "reason": "Response A answers in Roman Urdu as the prompt expects; Response B is in Hindi/Devanagari, wrong script, and breaks off mid-sentence."}
+{"id": 19, "category": "qa", "winner": "finetuned", "reason": "B is accurate and fluent Urdu; A is broken, ungrammatical, and degenerates into endless repetition."}
+{"id": 20, "category": "qa", "winner": "tie", "reason": "Both hallucinate fake peaks; neither names real Pakistani peaks like K2 or Nanga Parbat, equally wrong."}
+{"id": 21, "category": "summarization", "winner": "finetuned", "reason": "A is fluent and accurate; B has grammatical errors and awkward phrasings like 'اخلاقی سوالات ہی آئیں گے' and gender disagreement."}
+{"id": 22, "category": "summarization", "winner": "finetuned", "reason": "A is fluent, accurate, faithful Urdu; B has grammatical errors and a broken garbled clause about reforms."}
+{"id": 23, "category": "summarization", "winner": "base", "reason": "A is a faithful, complete English summary; B drops sea-level rise, alters meaning (mo'asar misused), and omits scientists' warning."}
+{"id": 24, "category": "summarization", "winner": "base", "reason": "A covers economy, port, and trade accurately; B fabricates 'اس کے علاقے میں' and omits the port, the passage's key point."}
+{"id": 25, "category": "summarization", "winner": "finetuned", "reason": "B gives faithful Urdu summary; A degenerates into Chinese garbage mid-output, failing the task entirely."}
+{"id": 26, "category": "summarization", "winner": "finetuned", "reason": "B summarizes in Roman Urdu matching the prompt's language; A switches entirely to English, ignoring target-language intent for a Pakistani user."}
+{"id": 27, "category": "summarization", "winner": "finetuned", "reason": "B is fluent, faithful, and concise; A has broken grammar and garbled lines ('غزل کل کرتے ہیں', 'نوجوان نسل نہیں کرتی')."}
+{"id": 28, "category": "summarization", "winner": "base", "reason": "B covers all five key points including WHO source and the call-to-action; A omits the last point and drops attribution."}
+{"id": 30, "category": "summarization", "winner": "finetuned", "reason": "A is fluent, accurate, two-sentence summary; B has spelling errors (ذیابی، موٹائے), broken grammar, and ignores the two-sentence limit."}
+{"id": 29, "category": "summarization", "winner": "finetuned", "reason": "B is faithful, fluent Roman Urdu covering all key points; A is garbled, hallucinated nonsense with broken Urdu script."}
+{"id": 31, "category": "summarization", "winner": "finetuned", "reason": "B has fragmented grammar errors and a garbled, partly non-Urdu final sentence; A is fluent and accurately covers the key points."}
+{"id": 32, "category": "translation", "winner": "finetuned", "reason": "A is faithful and fluent Urdu; B is garbled, mistranslated, has corrupt characters and broken grammar."}
+{"id": 34, "category": "translation", "winner": "finetuned", "reason": "Response A is garbled nonsense with hallucinated 'India' and broken words; B is fluent and mostly faithful despite minor errors."}
+{"id": 33, "category": "translation", "winner": "finetuned", "reason": "B gives a faithful, fluent Urdu translation; A is garbled with Chinese text and wrong meaning, only botching the attribution name."}
+{"id": 35, "category": "translation", "winner": "finetuned", "reason": "A is faithful and fluent; B mistranslates سمندر/صحرا as both sea and ocean, hallucinating an extra element."}
+{"id": 36, "category": "translation", "winner": "finetuned", "reason": "A is fluent, faithful Urdu with minor word choices; B is garbled, ungrammatical, mixes scripts and mistranslates badly."}
+{"id": 37, "category": "translation", "winner": "finetuned", "reason": "A is mostly faithful and fluent despite minor errors; B is garbled, mistranslates key terms, and is largely incoherent Urdu."}
+{"id": 38, "category": "translation", "winner": "finetuned", "reason": "A renders Iqbal's couplet faithfully; B mistranslates 'khudi' as voice, reverses who asks whom, and hallucinates the meaning."}
+{"id": 39, "category": "translation", "winner": "finetuned", "reason": "A is mostly faithful and fluent though it garbles the last sentence; B is incoherent word-salad with non-Urdu characters and no real meaning."}
+{"id": 41, "category": "translation", "winner": "finetuned", "reason": "A is faithful and fluent Urdu; B is garbled with non-Urdu words (کشور, استثمار) and broken grammar, distorting the meaning."}
+{"id": 40, "category": "translation", "winner": "base", "reason": "A keeps faithful detail (sadqa/khairat as charity and good deeds, mil kar khana); B drops nuance and renders iftar meal as dinner."}
+{"id": 42, "category": "translation", "winner": "finetuned", "reason": "Both translations faithful and fluent; B is clean direct output while A pads with meta-commentary not requested for a translation task."}
+{"id": 43, "category": "translation", "winner": "finetuned", "reason": "A is faithful and fluent Urdu despite minor awkwardness; B contains Russian/garbled characters, broken grammar, and a fabricated translation note."}
+{"id": 44, "category": "translation", "winner": "finetuned", "reason": "B is mostly fluent, faithful Urdu; A is garbled gibberish with broken non-Urdu characters and nonsense words."}
+{"id": 46, "category": "translation", "winner": "finetuned", "reason": "A translates the meaning faithfully in mostly-correct Urdu; B is gibberish with Chinese characters and ignores the source text."}
+{"id": 45, "category": "translation", "winner": "finetuned", "reason": "A gives faithful translation and a real Urdu idiom; B is incoherent gibberish with mojibake and hallucinated meaning."}
+{"id": 47, "category": "grammar", "winner": "finetuned", "reason": "A gives correct concise fixes; B's grammar explanations are incoherent gibberish and its final answer is cut off mid-word."}
+{"id": 49, "category": "grammar", "winner": "finetuned", "reason": "B gives grammatically correct, properly conjugated tense examples; A is full of broken grammar, nonsensical phrases, and wrong future-tense forms."}
+{"id": 48, "category": "grammar", "winner": "finetuned", "reason": "B correctly fixes all four sentences; A wrongly keeps passive 'liya gaya', singular-subject 'hain', and adds confused Hindi notes."}
+{"id": 50, "category": "grammar", "winner": "finetuned", "reason": "Both responses are broken, but B hallucinates fake grammatical terms and wrong plurals while A at least starts with marginally coherent content before degenerating."}
+{"id": 51, "category": "grammar", "winner": "finetuned", "reason": "Both flawed, but B gives clearer correct rule (gender-based agreement) with a real verb-ending example; A is incoherent and self-contradictory with wrong identical examples."}
+{"id": 52, "category": "grammar", "winner": "finetuned", "reason": "B uses correct passive form (gیا/گئی) with proper gender agreement; A's 'جا' is grammatically broken and incomplete."}
+{"id": 53, "category": "grammar", "winner": "finetuned", "reason": "Both badly hallucinate fake idioms, but A degenerates into meaningless 'kuch kuch' repetition; B at least gives idiom-meaning-example structure though still wrong."}
+{"id": 54, "category": "grammar", "winner": "finetuned", "reason": "Both flawed, but B gives mostly correct postposition functions and real sentences; A is incoherent with wrong examples like 'Dekhna ko' and broken translations."}
+{"id": 55, "category": "grammar", "winner": "finetuned", "reason": "Response A leaks Chinese preamble and mangles sentence 2's meaning; B leaves text unchanged but stays correct Urdu, A's errors are worse."}
+{"id": 57, "category": "reasoning", "winner": "base", "reason": "A computes both 200 profits and correctly sums to 400; B garbles the total as 100+200=600, wrong."}
+{"id": 56, "category": "grammar", "winner": "tie", "reason": "Both responses are broken garbage: A degenerates into repeated meaningless letter strings, B repeats pronouns and never answers."}
+{"id": 58, "category": "reasoning", "winner": "finetuned", "reason": "A is concise and correct; B is correct but riddled with garbled, broken Urdu and nonsensical phrasing."}
+{"id": 59, "category": "reasoning", "winner": "base", "reason": "B reasons correctly throughout; A makes arithmetic error stating 11 for only-Math despite computing 15 in its own steps."}
+{"id": 60, "category": "reasoning", "winner": "finetuned", "reason": "B shows correct mod-7 method though it bungles the final step; A is incoherent nonsense claiming no day exists."}
+{"id": 61, "category": "reasoning", "winner": "finetuned", "reason": "B's sum 2+4+8+16+32=62 is correct; A computed the same series but wrongly totaled 60."}
+{"id": 62, "category": "reasoning", "winner": "finetuned", "reason": "Both reach correct 90, but B's steps are clear and correct while A has garbled, confusing Roman Urdu phrasing."}
+{"id": 63, "category": "reasoning", "winner": "finetuned", "reason": "B's arithmetic is correct (sum 43); A has a typo-laden intro and miscomputes 13+15+18 as 46 instead of 46... actually A's sum is wrong, B is right."}
+{"id": 65, "category": "reasoning", "winner": "finetuned", "reason": "A computes correctly (total 109); B misreads 'bada beta 20 less than mother' as less than father and has a 220 typo, giving wrong 112."}
+{"id": 64, "category": "reasoning", "winner": "base", "reason": "B has arithmetic and self-contradiction errors (x=12 then y=20-11=9, total 20≠11+9); A's method is correct though truncated before final answer."}
+{"id": 66, "category": "reasoning", "winner": "base", "reason": "A gives on-topic water-crisis proposals despite poor grammar; B hallucinates an absurd fake dam and ignores the question."}
+{"id": 67, "category": "reasoning", "winner": "finetuned", "reason": "A computes 200×365=72,000... wait both differ; A's interest is one year only, B doubles 73,000×0.1×2 correctly but uses 73,000."}
+{"id": 68, "category": "reasoning", "winner": "finetuned", "reason": "A gives correct concise chain (150 capacity, 30 over, 1 extra room); B is garbled, self-contradictory, and miscounts rooms."}
+{"id": 70, "category": "reasoning", "winner": "finetuned", "reason": "A's logic is right (4h45m + 30min ≈ 1:15pm; minor pm error) while B is incoherent nonsense yielding absurd 19.96 hours."}
+{"id": 69, "category": "reasoning", "winner": "base", "reason": "A gives correct 40/13.33/16.67-day chain despite a 220% typo; B is garbled and reaches an absurd 132 days."}
+{"id": 71, "category": "reasoning", "winner": "finetuned", "reason": "A is coherent, gives both sides plus an opinion; B is grammatically broken, near-nonsensical, and never states a clear opinion."}
+{"id": 72, "category": "creative", "winner": "finetuned", "reason": "A is coherent, fluent Urdu hitting all three sensory elements; B is largely incoherent word-salad with broken grammar."}
+{"id": 73, "category": "creative", "winner": "finetuned", "reason": "B is coherent short prose on the brief though under length; A is broken, repetitive, incoherent Urdu."}
+{"id": 74, "category": "creative", "winner": "finetuned", "reason": "Prompt asked Roman Urdu; B delivers coherent Roman Urdu motivation while A is incoherent Urdu-script gibberish ignoring the brief."}
+{"id": 76, "category": "creative", "winner": "finetuned", "reason": "B is coherent and follows the comedic dialogue brief; A is broken, repetitive gibberish with no sense."}
+{"id": 75, "category": "creative", "winner": "finetuned", "reason": "B is coherent, fluent Urdu on mother's love with clear couplets; A is grammatically broken, incoherent gibberish."}
+{"id": 77, "category": "creative", "winner": "finetuned", "reason": "Response B is coherent, grammatical, culturally appropriate Urdu that follows the brief; Response A is broken, garbled text with nonsense words."}
+{"id": 78, "category": "creative", "winner": "finetuned", "reason": "A is mostly coherent Roman Urdu following the brief; B is largely incoherent word-salad with Hindu names/places, wrong for a Pakistani user."}
+{"id": 80, "category": "creative", "winner": "finetuned", "reason": "A is coherent and culturally relevant despite a weak ending; B is broken, repetitive gibberish that fails the brief entirely."}
+{"id": 79, "category": "creative", "winner": "finetuned", "reason": "B is coherent, vivid winter-morning imagery; A is repetitive gibberish that fails the brief entirely."}
+{"id": 82, "category": "code_explanation", "winner": "base", "reason": "B explains code step by step in Urdu; A is vague and hallucinates. B's only flaw is a wrong output digit, still far more useful."}
+{"id": 81, "category": "creative", "winner": "finetuned", "reason": "A is coherent, culturally appropriate Urdu dialogue between two friends; B is largely incoherent gibberish with broken grammar and nonsense lines."}
+{"id": 83, "category": "code_explanation", "winner": "base", "reason": "B correctly explains sorted ascending order with step-by-step breakdown; A is accurate but minimal. B's example has typos but core explanation is more useful for a dev."}
+{"id": 84, "category": "code_explanation", "winner": "finetuned", "reason": "A gives correct, clear code with sensible Roman Urdu explanation; B is incoherent gibberish ('لہجے'), broken, and cut off mid-sentence."}
+{"id": 85, "category": "code_explanation", "winner": "finetuned", "reason": "Response A's code is correct and explanation clear; Response B has broken Urdu, garbage words, and a truncated unclosed code block."}
+{"id": 86, "category": "code_explanation", "winner": "base", "reason": "B identifies the empty-list division-by-zero error and fixes it correctly, despite messy Urdu; A is nonsense."}
+{"id": 88, "category": "code_explanation", "winner": "finetuned", "reason": "A gives correct code examples and accurate, clear Roman/Urdu explanations; B is garbled, incoherent Urdu and cuts off incomplete."}
+{"id": 87, "category": "code_explanation", "winner": "finetuned", "reason": "B gives correct, clear waiter-as-API analogy in fluent Roman Urdu; A is incoherent, mislabels the website as the API, and confuses the flow."}
+{"id": 90, "category": "code_explanation", "winner": "finetuned", "reason": "A is correct, coherent, and well-explained; B has broken numbering (2,2,2,8), garbled phrasing, and confused structure."}
+{"id": 89, "category": "code_explanation", "winner": "finetuned", "reason": "Response A gives a clear, mostly accurate Roman Urdu explanation; Response B is garbled with broken words and mangled Urdu that obscures meaning."}
+{"id": 91, "category": "code_explanation", "winner": "finetuned", "reason": "B explains try/except/finally correctly with working code and finally block; A is broken, incoherent, and missing finally entirely."}
+{"id": 92, "category": "code_mixed", "winner": "finetuned", "reason": "B matches the user's Roman Urdu code-mixed style naturally with correct code; A ignores the mixing, is all-English, and cuts off mid-sentence."}
+{"id": 93, "category": "code_mixed", "winner": "finetuned", "reason": "B keeps the requested Urdu/Roman framing with English technical terms and adds runnable code; A reverts almost entirely to English, ignoring the language instruction."}
+{"id": 94, "category": "code_mixed", "winner": "finetuned", "reason": "A mixes Roman Urdu naturally throughout as asked; B answers mostly in English, ignoring the code-mixed register of the prompt."}
+{"id": 96, "category": "code_mixed", "winner": "base", "reason": "Both code-mix naturally, but A is more complete and accurate; B has garbled phrases like 'programming lagat karte hi' and 'niche yourself'."}
+{"id": 95, "category": "code_mixed", "winner": "finetuned", "reason": "B has correct imports and complete, accurate explanations; A omits useEffect import, has garbled Urdu, and cuts off mid-sentence."}
+{"id": 97, "category": "qa", "winner": "finetuned", "reason": "A is fluent, accurate, and answers the question; B is incoherent repetitive gibberish with broken Urdu and no real meaning."}
+{"id": 98, "category": "reasoning", "winner": "base", "reason": "Both reach correct 600 kg with valid steps; A gives a fully Urdu explanation while B mixes English labels less naturally."}
+{"id": 99, "category": "creative", "winner": "finetuned", "reason": "B is coherent, fluent, culturally appropriate Urdu speech; A is broken, repetitive gibberish that fails the brief."}
+{"id": 100, "category": "grammar", "winner": "finetuned", "reason": "A is mostly coherent and grammatical with usable examples; B is largely incoherent gibberish with wrong terminology and a truncated answer."}
+{"id": 17, "category": "qa", "winner": "tie", "reason": "Both are incoherent hallucinated word-salad with no real tectonic-plate science; neither answers the question."}
